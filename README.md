@@ -1,5 +1,7 @@
 # rustfetch
 
+![Screenshot](./screenshot.png)
+
 A simple fetch written in Rust.
 
 Deps:
