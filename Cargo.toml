@@ -1,8 +1,14 @@
 [package]
 name = "rustfetch"
 version = "0.1.0"
-authors = ["BuildTools <unconfigured@null.spigotmc.org>"]
+authors = ["Tom van Dijk <18gatenmaker6@gmail.com>"]
 edition = "2018"
+license-file = "UNLICENSE"
+description = "A simple fetch written in Rust."
+homepage = "https://github.com/18gatenmaker"
+repository = "https://github.com/18gatenmaker/rustfetch"
+documentation = "https://docs.rs/rustfetch"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
