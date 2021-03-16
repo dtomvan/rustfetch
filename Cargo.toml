@@ -1,0 +1,12 @@
+[package]
+name = "rustfetch"
+version = "0.1.0"
+authors = ["BuildTools <unconfigured@null.spigotmc.org>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ansi_term = "0.12.1"
+os_info = { version = "3.0", default-features = false}
+sys-info = "0.8"
