@@ -15,7 +15,7 @@ jobs:
       - name: Install latest toolchain
         uses: actions-rs/toolchain@v1
         with:
-            toolchain: default
+            toolchain: stable
             override: true
             components: rustfmt
       - name: Format using Rustfmt
