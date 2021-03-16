@@ -18,10 +18,18 @@ jobs:
             toolchain: stable
             override: true
             components: rustfmt
+      - name: Install Binutils
+        run: sudo apt install binutils
+      - name: Install upx
+        run: sudo apt install upx
       - name: Format using Rustfmt
         run: cargo fmt
       - name: Build project
         run: cargo build --release --locked
+      - name: Strip binary
+        run: strip target/release/rustfetch
+      - name: Pack binary
+        run: upx --best --lzma target/release/rustfetch
       - name: Bump version and push tag/create release point
         uses: anothrNick/github-tag-action@1.17.2
         env:
