@@ -15,4 +15,4 @@ readme = "README.md"
 [dependencies]
 ansi_term = "0.12.1"
 os_info = { version = "3.0", default-features = false}
-sys-info = "0.8"
+systemstat = "0.1.7"

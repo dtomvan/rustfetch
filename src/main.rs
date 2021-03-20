@@ -4,6 +4,7 @@ use std::{
     ffi::OsString,
     io::{BufRead, BufReader},
 };
+use systemstat::Platform;
 
 /// 1. Read file and include_bytes!()
 /// 2. For each line (12) add some info (from an array)
@@ -12,7 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file = file.as_slice();
     let contents = BufReader::new(file).lines();
     let info = os_info::get();
-    let mem = sys_info::mem_info()?;
+    let mem = systemstat::System::new().memory()?;
     let mut stdout = std::io::stdout();
 
     for (i, line) in contents.enumerate() {
@@ -39,8 +40,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 writeln!(
                     stdout,
                     "Ram: {}MB/{}MB",
-                    (mem.total - mem.avail) / 1024,
-                    mem.total / 1024
+                    (mem.total.as_u64() - mem.free.as_u64()) / 1024 / 1024,
+                    mem.total.as_u64() / 1024 / 1024
                 )?;
             }
             10 => {
