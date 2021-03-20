@@ -25,7 +25,7 @@ jobs:
       - name: Format using Rustfmt
         run: cargo fmt
       - name: Build project
-        run: cargo build --release --locked
+        run: cargo build --release
       - name: Strip binary
         run: strip target/release/rustfetch
       - name: Pack binary
